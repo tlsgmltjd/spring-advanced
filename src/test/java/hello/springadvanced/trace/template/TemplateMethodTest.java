@@ -49,4 +49,25 @@ public class TemplateMethodTest {
         t1.execute();
         t2.execute();
     }
+
+    // 익명 내부 클래스로 템플릿 메서드 패턴 사용하기
+    @Test
+    void templateMethodV2() {
+        AbstractTemplate abstractTemplate1 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비즈니스 로직 1 실행");
+            }
+        };
+
+        AbstractTemplate abstractTemplate2 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비즈니스 로직 2 실행");
+            }
+        };
+
+        abstractTemplate1.execute();
+        abstractTemplate2.execute();
+    }
 }
