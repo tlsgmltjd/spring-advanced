@@ -23,6 +23,7 @@ public class ContextV1 {
 
     public void execute() {
         long startTime = System.currentTimeMillis();
+        log.info("=== log start ===");
 
         // biz start
         strategy.call();
@@ -31,6 +32,7 @@ public class ContextV1 {
         long endTime = System.currentTimeMillis();
         long resultTime = endTime - startTime;
         log.info("resultTime: {}", resultTime);
+        log.info("=== log end ===");
     }
 
 }
